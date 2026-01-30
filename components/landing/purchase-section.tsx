@@ -106,7 +106,7 @@ export function PurchaseSection() {
               <Button
                 size="lg"
                 className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-xl py-7 shadow-lg shadow-accent/30 transition-all hover:scale-[1.02]"
-                onClick={() => window.open('https://pay.kiwify.com.br', '_blank')}
+                onClick={() => window.open('https://pay.lowify.com.br/checkout.php?product_id=vgfphs', '_blank')}
               >
                 <Zap className="w-6 h-6 mr-2" />
                 COMPRAR AGORA
