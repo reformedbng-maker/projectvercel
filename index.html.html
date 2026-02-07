@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesse o Bot da Letycia Soares no Telegram</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1c93e3 0%, #0088cc 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+        }
+        
+        .logo i {
+            font-size: 80px;
+            color: #fff;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.5;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 4px solid #ff6b9d;
+        }
+        
+        .highlight {
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+        
+        .bot-name {
+            font-weight: bold;
+            color: #ff6b9d;
+            text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
+        }
+        
+        .creator-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .creator-tag {
+            background-color: rgba(255, 107, 157, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 107, 157, 0.4);
+        }
+        
+        .creator-tag i {
+            color: #ff6b9d;
+        }
+        
+        .telegram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #ff6b9d, #ff8ab0);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 22px 50px;
+            border-radius: 50px;
+            margin: 30px 0;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .telegram-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .telegram-btn:hover:before {
+            left: 100%;
+        }
+        
+        .telegram-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.6);
+            background: linear-gradient(to right, #ff8ab0, #ff6b9d);
+        }
+        
+        .telegram-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .telegram-btn i {
+            margin-right: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .instructions h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            color: #ffeb3b;
+        }
+        
+        .instructions h2 i {
+            margin-right: 10px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .feature {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px 20px;
+            width: 220px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 3px solid #ff6b9d;
+        }
+        
+        .feature:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ff6b9d;
+        }
+        
+        .feature h3 {
+            margin-bottom: 10px;
+            color: #ffeb3b;
+        }
+        
+        .feature p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
+            .telegram-btn {
+                font-size: 1.5rem;
+                padding: 20px 35px;
+            }
+            
+            .creator-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fab fa-telegram"></i>
+        </div>
+        
+        <h1>Bot da Letycia Soares</h1>
+        
+        <div class="creator-info">
+            <div class="creator-tag">
+                <i class="fas fa-heart"></i> Criadora de Conteúdo
+            </div>
+            <div class="creator-tag">
+                <i class="fas fa-birthday-cake"></i> Apenas 18 aninhos
+            </div>
+            <div class="creator-tag">
+                <i class="fas fa-user"></i> LetyciaSoares
+            </div>
+        </div>
+        
+        <p class="subtitle">Conheça o <span class="bot-name">@letyciasoaresbot</span> no Telegram! <span class="highlight">Criadora de conteúdo de apenas 18 aninhos, ruivinha linda em busca de transmitir prazer.</span></p>
+        
+        <a href="http://t.me/letyciasoaresbot" class="telegram-btn" target="_blank">
+            <i class="fab fa-telegram"></i> Acessar Bot no Telegram
+        </a>
+        
+        <div class="instructions">
+            <h2><i class="fas fa-star"></i> Como acessar o bot</h2>
+            <ol>
+                <li>Clique no botão rosa acima para ser redirecionado</li>
+                <li>Isso abrirá o Telegram (ou pedirá para instalá-lo)</li>
+                <li>Toque em "Iniciar" para começar a conversar com a Letycia</li>
+                <li>Explore o conteúdo exclusivo disponível</li>
+            </ol>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-gem"></i>
+                <h3>Conteúdo Exclusivo</h3>
+                <p>Material especial criado com dedicação para seus seguidores</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-heart"></i>
+                <h3>Transmitir Prazer</h3>
+                <p>Conteúdo focado em proporcionar experiências agradáveis</p>
+            </div>
+            
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>Privacidade</h3>
+                <p>Interação segura e discreta através do Telegram</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 Bot da Letycia Soares. Esta página não é afiliada ao Telegram.</p>
+        <p style="margin-top: 5px; font-size: 0.8rem;">Apenas para maiores de 18 anos</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar efeito de clique suave ao botão
+            const telegramBtn = document.querySelector('.telegram-btn');
+            telegramBtn.addEventListener('click', function() {
+                // Adicionar efeito visual de clique
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Estatística de clique (simulada)
+                console.log('Botão clicado - redirecionando para o bot da Letycia Soares');
+            });
+            
+            // Animação de entrada dos elementos
+            const elements = document.querySelectorAll('.container > *');
+            elements.forEach((el, index) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+            
+            // Efeito de piscar no botão periodicamente
+            setInterval(() => {
+                telegramBtn.style.boxShadow = '0 10px 25px rgba(255, 107, 157, 0.6)';
+                setTimeout(() => {
+                    telegramBtn.style.boxShadow = '0 10px 25px rgba(255, 107, 157, 0.4)';
+                }, 500);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
